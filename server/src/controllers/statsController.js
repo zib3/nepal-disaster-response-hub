@@ -7,47 +7,97 @@ import User from '../models/User.js';
 // @access  Private
 export const getDashboardStats = async (req, res) => {
     try {
+        // Get previous period (7 days ago)
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
         // Get active disasters count
-        const activeDisasters = await Disaster.countDocuments({ 
-            severity: { $in: ['Critical', 'High', 'Medium'] } 
-        });
+        const [activeDisasters, prevActiveDisasters] = await Promise.all([
+            Disaster.countDocuments({ 
+                severity: { $in: ['Critical', 'High', 'Medium'] } 
+            }),
+            Disaster.countDocuments({ 
+                severity: { $in: ['Critical', 'High', 'Medium'] },
+                createdAt: { $lte: sevenDaysAgo }
+            })
+        ]);
 
         // Get total people affected
-        const peopleAffectedResult = await Disaster.aggregate([
-            { $group: { _id: null, total: { $sum: '$affected' } } }
+        const [currentAffectedResult, prevAffectedResult] = await Promise.all([
+            Disaster.aggregate([
+                { $group: { _id: null, total: { $sum: '$affected.totalAffected' } } }
+            ]),
+            Disaster.aggregate([
+                { $match: { createdAt: { $lte: sevenDaysAgo } } },
+                { $group: { _id: null, total: { $sum: '$affected.totalAffected' } } }
+            ])
         ]);
-        const peopleAffected = peopleAffectedResult.length > 0 ? peopleAffectedResult[0].total : 0;
+        
+        const peopleAffected = currentAffectedResult.length > 0 ? currentAffectedResult[0].total : 0;
+        const prevPeopleAffected = prevAffectedResult.length > 0 ? prevAffectedResult[0].total : 0;
 
         // Get active response teams (users with responder role)
-        const responseTeams = await User.countDocuments({ 
-            role: 'responder', 
-            isActive: true 
-        });
+        const [responseTeams, prevResponseTeams] = await Promise.all([
+            User.countDocuments({ 
+                role: 'responder', 
+                isActive: true 
+            }),
+            User.countDocuments({ 
+                role: 'responder', 
+                isActive: true,
+                createdAt: { $lte: sevenDaysAgo }
+            })
+        ]);
 
-        // Calculate average response time (mock data for now)
-        const avgResponseTime = '14 min';
+        // Calculate average response time from alerts
+        const [currentResponseTime, prevResponseTime] = await Promise.all([
+            Alert.aggregate([
+                { 
+                    $match: { 
+                        responseTime: { $exists: true } 
+                    } 
+                },
+                { 
+                    $group: { 
+                        _id: null, 
+                        avgTime: { $avg: '$responseTime' } 
+                    } 
+                }
+            ]),
+            Alert.aggregate([
+                { 
+                    $match: { 
+                        responseTime: { $exists: true },
+                        createdAt: { $lte: sevenDaysAgo }
+                    } 
+                },
+                { 
+                    $group: { 
+                        _id: null, 
+                        avgTime: { $avg: '$responseTime' } 
+                    } 
+                }
+            ])
+        ]);
+
+        const avgResponseTime = currentResponseTime.length > 0 ? 
+            Math.round(currentResponseTime[0].avgTime) : 0;
+        const prevAvgResponseTime = prevResponseTime.length > 0 ? 
+            Math.round(prevResponseTime[0].avgTime) : 0;
+
+        // Calculate changes
+        const changes = {
+            disasters: activeDisasters - prevActiveDisasters,
+            affected: peopleAffected - prevPeopleAffected,
+            teams: responseTeams - prevResponseTeams,
+            responseTime: prevAvgResponseTime - avgResponseTime // Negative means improvement
+        };
 
         const stats = {
-            activeDisasters: {
-                value: activeDisasters.toString(),
-                change: '+3', // This could be calculated based on time period
-                description: 'Currently monitored events'
-            },
-            peopleAffected: {
-                value: peopleAffected.toLocaleString(),
-                change: '+1,234',
-                description: 'Requiring assistance'
-            },
-            responseTeams: {
-                value: responseTeams.toString(),
-                change: '+5',
-                description: 'Deployed in field'
-            },
-            avgResponseTime: {
-                value: avgResponseTime,
-                change: '-2 min',
-                description: 'Emergency response'
-            }
+            activeDisasters,
+            peopleAffected,
+            responseTeams,
+            avgResponseTime,
+            changes
         };
 
         res.status(200).json({
@@ -74,7 +124,7 @@ export const getDisastersByType = async (req, res) => {
                 $group: {
                     _id: '$type',
                     count: { $sum: 1 },
-                    totalAffected: { $sum: '$affected' }
+                    totalAffected: { $sum: '$affected.totalAffected' }
                 }
             },
             { $sort: { count: -1 } }

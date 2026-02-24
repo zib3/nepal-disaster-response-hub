@@ -1,0 +1,61 @@
+
+> nepal-disaster-response-server@1.0.0 dev
+> nodemon src/index.js < /dev/null
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node src/index.js src/index.js`[39m
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-21 14:24:22 [[32minfo[39m]: 🚀 Nepal Disaster Response Server running on port 5001
+2025-08-21 14:24:22 [[32minfo[39m]: 🌍 Environment: development
+2025-08-21 14:24:22 [[32minfo[39m]: 📊 Health check available at: http://localhost:5001/health
+2025-08-21 14:24:22 [[32minfo[39m]: Weather update task scheduled (every 30 minutes)
+2025-08-21 14:24:22 [[32minfo[39m]: Data cleanup task scheduled (daily at 2 AM)
+2025-08-21 14:24:22 [[32minfo[39m]: Scheduler service initialized
+2025-08-21 14:24:22 [[32minfo[39m]: Offline service initialized
+2025-08-21 14:24:23 [[32minfo[39m]: 📦 MongoDB Connected: ac-8plhhnd-shard-00-02.ulhs7f0.mongodb.net
+2025-08-21 14:24:31 [[32minfo[39m]: ::1 - - [21/Aug/2025:08:39:31 +0000] "GET /health HTTP/1.1" 200 103 "-" "curl/8.7.1"
+2025-08-21 14:24:36 [[32minfo[39m]: ::1 - - [21/Aug/2025:08:39:36 +0000] "GET /health HTTP/1.1" 200 103 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-08-21 14:24:36 [[32minfo[39m]: ::1 - - [21/Aug/2025:08:39:36 +0000] "GET /nonexistent HTTP/1.1" 404 74 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-08-21 14:24:36 [[32minfo[39m]: ::1 - - [21/Aug/2025:08:39:36 +0000] "POST /api/auth/register HTTP/1.1" 201 404 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-08-21 14:24:36 [[32minfo[39m]: ::1 - - [21/Aug/2025:08:39:36 +0000] "POST /api/auth/login HTTP/1.1" 200 404 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-08-21 14:24:36 [[32minfo[39m]: ::1 - - [21/Aug/2025:08:39:36 +0000] "GET /api/stats/dashboard HTTP/1.1" 401 38 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-08-21 14:24:36 [[32minfo[39m]: ::1 - - [21/Aug/2025:08:39:36 +0000] "GET /api/disasters HTTP/1.1" 401 38 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-08-21 14:30:00 [[32minfo[39m]: Starting scheduled weather update...
+2025-08-21 14:30:00 [[32minfo[39m]: Starting weather data update for all Nepal locations...
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching current weather:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[31merror[39m]: Error fetching weather forecast:
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Kathmandu
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Biratnagar
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Chitwan
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Dharan
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Birgunj
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Pokhara
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Butwal
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Janakpur
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Nepalgunj
+2025-08-21 14:30:00 [[32minfo[39m]: Updated weather data for Dhangadhi
+2025-08-21 14:30:00 [[32minfo[39m]: Weather update completed. Successful: 10, Failed: 0
+2025-08-21 14:30:00 [[32minfo[39m]: Scheduled weather update completed: 10 successful, 0 failed
+2025-08-21 14:34:40 [[32minfo[39m]: SIGTERM received, shutting down gracefully
+2025-08-21 14:34:40 [[32minfo[39m]: Process terminated

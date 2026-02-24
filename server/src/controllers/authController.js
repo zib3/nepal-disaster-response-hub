@@ -30,10 +30,14 @@ export const registerUser = async (req, res) => {
         });
 
         const token = user.getSignedJwtToken();
+        
+        // Get user data without password
+        const userData = await User.findById(user._id).select('-password');
 
         res.status(201).json({
             success: true,
-            token
+            token,
+            user: userData
         });
 
     } catch (error) {
@@ -71,9 +75,13 @@ export const loginUser = async (req, res) => {
 
         const token = user.getSignedJwtToken();
 
+        // Get user data without password
+        const userData = await User.findById(user._id).select('-password');
+
         res.status(200).json({
             success: true,
-            token
+            token,
+            user: userData
         });
 
     } catch (error) {

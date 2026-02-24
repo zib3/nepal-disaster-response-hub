@@ -30,4 +30,6 @@ const auth = async (req, res, next) => {
     }
 };
 
+// Export both default and named export for flexibility
+export const protect = auth;
 export default auth;

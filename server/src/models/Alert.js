@@ -36,6 +36,10 @@ const alertSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    responseTime: {
+        type: Number, // Time in minutes from alert to response
+        min: 0
+    },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',

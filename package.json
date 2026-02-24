@@ -1,0 +1,41 @@
+{
+  "name": "nepal-disaster-response",
+  "version": "1.0.0",
+  "description": "Nepal Disaster Response System - Full Stack Application",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npm start --prefix server",
+    "dev": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "build:dev": "npm run build:dev --prefix client",
+    "lint": "npm run lint --prefix client",
+    "preview": "npm run preview --prefix client",
+    "seed": "npm run seed --prefix server",
+    "seed:dev": "npm run seed:dev --prefix server",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "install:server": "npm install --prefix server",
+    "install:client": "npm install --prefix client",
+    "clean": "rm -rf node_modules server/node_modules client/node_modules",
+    "dev:both": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "test": "echo \"Run tests in server and client directories\" && exit 0"
+  },
+  "keywords": [
+    "disaster-response",
+    "nepal",
+    "emergency",
+    "fullstack",
+    "react",
+    "express"
+  ],
+  "author": "Nepal Disaster Response Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "framer-motion": "^12.34.3"
+  }
+}

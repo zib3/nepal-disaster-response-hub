@@ -1,26 +1,115 @@
-nohup: ignoring input
 
 > nepal-disaster-response-server@1.0.0 dev
-> nodemon src/index.js
+> nodemon src/index.js < /dev/null
 
 [33m[nodemon] 3.1.10[39m
 [33m[nodemon] to restart at any time, enter `rs`[39m
-[33m[nodemon] watching path(s): *.*[39m
-[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
-[32m[nodemon] starting `node src/index.js`[39m
-node:events:495
-      throw er; // Unhandled 'error' event
-      ^
-
-Error: EBADF: bad file descriptor, read
-Emitted 'error' event on ReadStream instance at:
-    at emitErrorNT (node:internal/streams/destroy:151:8)
-    at errorOrDestroy (node:internal/streams/destroy:214:7)
-    at node:internal/fs/streams:260:9
-    at FSReqCallback.wrapper [as oncomplete] (node:fs:677:5) {
-  errno: -9,
-  code: 'EBADF',
-  syscall: 'read'
-}
-
-Node.js v18.19.1
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node src/index.js src/index.js`[39m
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-21 12:30:22 [[32minfo[39m]: 🚀 Nepal Disaster Response Server running on port 5001
+2025-08-21 12:30:22 [[32minfo[39m]: 🌍 Environment: development
+2025-08-21 12:30:22 [[32minfo[39m]: 📊 Health check available at: http://localhost:5001/health
+2025-08-21 12:30:22 [[32minfo[39m]: Weather update task scheduled (every 30 minutes)
+2025-08-21 12:30:22 [[32minfo[39m]: Data cleanup task scheduled (daily at 2 AM)
+2025-08-21 12:30:22 [[32minfo[39m]: Scheduler service initialized
+2025-08-21 12:30:22 [[32minfo[39m]: Offline service initialized
+2025-08-21 12:30:26 [[32minfo[39m]: 📦 MongoDB Connected: ac-8plhhnd-shard-00-00.ulhs7f0.mongodb.net
+2025-08-21 12:30:34 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:45:34 +0000] "GET /api/health HTTP/1.1" 200 571 "-" "curl/8.7.1"
+2025-08-21 12:30:42 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:45:42 +0000] "POST /api/auth/login HTTP/1.1" 200 491 "-" "curl/8.7.1"
+2025-08-21 12:31:09 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:46:09 +0000] "GET /api/news/breaking HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:31:09 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:46:09 +0000] "GET /api/news?page=1&limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:31:45 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:46:45 +0000] "POST /api/auth/login HTTP/1.1" 200 491 "-" "curl/8.7.1"
+2025-08-21 12:31:45 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:46:45 +0000] "GET /api/news?page=1&limit=50 HTTP/1.1" 200 7882 "-" "curl/8.7.1"
+2025-08-21 12:32:17 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:47:17 +0000] "GET /api/news/breaking HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:32:17 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:47:17 +0000] "GET /api/news?page=1&limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:32:43 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:47:43 +0000] "GET /api/news/breaking HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:32:43 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:47:43 +0000] "GET /api/news?page=1&limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:33:06 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:48:06 +0000] "GET /api/news/breaking HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:33:06 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:48:06 +0000] "GET /api/news?page=1&limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:33:24 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:48:24 +0000] "GET /api/activities?limit=10 HTTP/1.1" 404 86 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:33:25 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:48:25 +0000] "GET /api/users?limit=50 HTTP/1.1" 200 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:33:25 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:48:25 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:33:25 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:48:25 +0000] "GET /api/health HTTP/1.1" 200 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:34:27 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:49:27 +0000] "GET /api/users?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:34:27 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:49:27 +0000] "GET /api/health HTTP/1.1" 200 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:34:27 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:49:27 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:34:34 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:49:34 +0000] "POST /api/auth/login HTTP/1.1" 200 491 "-" "curl/8.7.1"
+2025-08-21 12:34:34 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:49:34 +0000] "GET /api/users?limit=50 HTTP/1.1" 200 2038 "-" "curl/8.7.1"
+2025-08-21 12:34:58 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:49:58 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:08 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:08 +0000] "GET /api/users?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:09 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:09 +0000] "GET /api/health HTTP/1.1" 200 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:17 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:17 +0000] "GET /api/users?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:17 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:17 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:17 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:17 +0000] "GET /api/health HTTP/1.1" 200 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:23 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:23 +0000] "GET /api/users?page=1&limit=100 HTTP/1.1" 200 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:24 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:24 +0000] "GET /api/disasters?page=1&limit=100 HTTP/1.1" 200 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:24 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:24 +0000] "GET /api/resources?page=1&limit=100 HTTP/1.1" 200 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:26 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:26 +0000] "GET /api/users?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:26 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:26 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:26 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:26 +0000] "GET /api/health HTTP/1.1" 200 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:29 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:29 +0000] "GET /api/users?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:29 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:29 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:30 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:30 +0000] "GET /api/health HTTP/1.1" 200 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:31 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:31 +0000] "GET /api/resources?page=1&limit=100 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:41 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:41 +0000] "GET /api/users?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:41 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:41 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:35:41 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:50:41 +0000] "GET /api/health HTTP/1.1" 200 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:36:27 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:51:27 +0000] "POST /api/auth/login HTTP/1.1" 401 33 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:36:58 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:51:58 +0000] "POST /api/auth/login HTTP/1.1" 401 33 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:37:12 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:52:12 +0000] "POST /api/auth/login HTTP/1.1" 200 491 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:37:12 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:52:12 +0000] "GET /api/users?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:37:13 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:52:13 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:37:13 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:52:13 +0000] "GET /api/health HTTP/1.1" 200 571 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:37:48 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:52:48 +0000] "POST /api/auth/login HTTP/1.1" 200 491 "-" "curl/8.7.1"
+2025-08-21 12:37:49 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:52:49 +0000] "GET /api/users?limit=50 HTTP/1.1" 200 2038 "-" "curl/8.7.1"
+2025-08-21 12:37:56 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:52:56 +0000] "POST /api/auth/login HTTP/1.1" 401 33 "-" "curl/8.7.1"
+2025-08-21 12:38:32 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:53:32 +0000] "POST /api/auth/login HTTP/1.1" 200 516 "-" "curl/8.7.1"
+2025-08-21 12:38:39 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:53:39 +0000] "POST /api/auth/login HTTP/1.1" 200 469 "-" "curl/8.7.1"
+2025-08-21 12:38:59 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:53:59 +0000] "POST /api/auth/login HTTP/1.1" 200 475 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:39:00 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:54:00 +0000] "GET /api/disasters?limit=50 HTTP/1.1" 200 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:39:00 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:54:00 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:39:00 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:54:00 +0000] "GET /api/alerts?limit=20 HTTP/1.1" 200 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:39:00 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:54:00 +0000] "GET /api/users?limit=100 HTTP/1.1" 200 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:39:01 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:54:01 +0000] "GET /api/resources?limit=50 HTTP/1.1" 200 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/index.js src/index.js`[39m
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-08-21 12:41:19 [[32minfo[39m]: 🚀 Nepal Disaster Response Server running on port 5001
+2025-08-21 12:41:19 [[32minfo[39m]: 🌍 Environment: development
+2025-08-21 12:41:19 [[32minfo[39m]: 📊 Health check available at: http://localhost:5001/health
+2025-08-21 12:41:19 [[32minfo[39m]: Weather update task scheduled (every 30 minutes)
+2025-08-21 12:41:19 [[32minfo[39m]: Data cleanup task scheduled (daily at 2 AM)
+2025-08-21 12:41:19 [[32minfo[39m]: Scheduler service initialized
+2025-08-21 12:41:19 [[32minfo[39m]: Offline service initialized
+2025-08-21 12:41:22 [[32minfo[39m]: 📦 MongoDB Connected: ac-8plhhnd-shard-00-00.ulhs7f0.mongodb.net
+2025-08-21 12:41:30 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:56:30 +0000] "GET /api/disasters?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:41:30 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:56:30 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:41:31 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:56:31 +0000] "GET /api/alerts?limit=20 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:41:31 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:56:31 +0000] "GET /api/users?limit=100 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:41:31 [[32minfo[39m]: ::1 - - [21/Aug/2025:06:56:31 +0000] "GET /api/resources?limit=50 HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 12:47:45 [[32minfo[39m]: MongoDB reconnected
+2025-08-21 12:47:45 [[32minfo[39m]: MongoDB reconnected
+[2025-08-21T07:47:56.214Z] [PID: 4028] [32m[NODE-CRON][32m [33m[WARN][0m missed execution at Thu Aug 21 2025 13:30:00 GMT+0545 (Nepal Time)! Possible blocking IO or high CPU user at the same process used by node-cron.
+2025-08-21 13:34:17 [[33mwarn[39m]: MongoDB disconnected
+2025-08-21 13:34:17 [[32minfo[39m]: MongoDB reconnected
+2025-08-21 13:34:25 [[32minfo[39m]: ::1 - - [21/Aug/2025:07:49:25 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 13:36:37 [[32minfo[39m]: MongoDB reconnected
+2025-08-21 13:36:38 [[32minfo[39m]: MongoDB reconnected
+2025-08-21 13:36:38 [[33mwarn[39m]: MongoDB disconnected
+2025-08-21 13:36:39 [[32minfo[39m]: MongoDB reconnected
+2025-08-21 13:36:39 [[32minfo[39m]: ::1 - - [21/Aug/2025:07:51:39 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+2025-08-21 13:40:01 [[32minfo[39m]: ::1 - - [21/Aug/2025:07:55:01 +0000] "GET /api/stats/dashboard HTTP/1.1" 304 - "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+[32m[nodemon] restarting child process[39m
+[32m[nodemon] starting `node src/index.js src/index.js`[39m
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-21 13:47:27 [[32minfo[39m]: 🚀 Nepal Disaster Response Server running on port 5001
+2025-08-21 13:47:27 [[32minfo[39m]: 🌍 Environment: development
+2025-08-21 13:47:27 [[32minfo[39m]: 📊 Health check available at: http://localhost:5001/health
+2025-08-21 13:47:27 [[32minfo[39m]: Weather update task scheduled (every 30 minutes)
+2025-08-21 13:47:27 [[32minfo[39m]: Data cleanup task scheduled (daily at 2 AM)
+2025-08-21 13:47:27 [[32minfo[39m]: Scheduler service initialized
+2025-08-21 13:47:27 [[32minfo[39m]: Offline service initialized
+2025-08-21 13:47:27 [[31merror[39m]: MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.ulhs7f0.mongodb.net
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
