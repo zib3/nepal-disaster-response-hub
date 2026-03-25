@@ -107,6 +107,8 @@ SMTP_PASS=your_app_password
 - **Coordinator**: coordinator@neoc.gov.np / coordinator123
 - **Responder**: responder@nepal.army.mil.np / responder123
 
+Note: The seeded admin user is created with email `admin@nepaldisaster.gov.np`. If you encounter login issues, ensure the database has been properly seeded.
+
 ### User Roles
 - **Admin**: Full system access, user management, system configuration
 - **Coordinator**: Disaster coordination, resource management, team assignments
